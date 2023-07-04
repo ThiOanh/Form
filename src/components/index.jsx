@@ -56,7 +56,7 @@ function Form(props) {
         email: validationEmail.values.email,
       };
 
-      console.log('««««« Call API with value »»»»»', data);
+      
 
       setCurrentStep(REGISTER_STEP.SUCCESS_STEP);
     },
