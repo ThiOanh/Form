@@ -18,6 +18,7 @@ function Form(props) {
     validationSchema: Yup.object({
       email: Yup.string().email("Invalid email format").required('Required!'),
     }),
+
     onSubmit: (values) => {
       // step 1 : kiem tra xem email đã đki chưa
       // step 2 chuyển sang step tiếp theo/ hiển thị loi
@@ -92,7 +93,7 @@ function Form(props) {
 
         {
           currentStep === REGISTER_STEP.EMAIL_STEP && (
-          
+            
         <div className="form-floating mb-4">
           <input
             type="text"
@@ -111,6 +112,7 @@ function Form(props) {
             }}
           />
           <label htmlFor="floatingInput ">Email address</label>
+          {validationEmail.errors?.email}
         </div>
         
         )
@@ -136,6 +138,7 @@ function Form(props) {
               }}
             />
             <label htmlFor="floatingName ">Name</label>
+            {validationInfor.errors?.name}
           </div>
   
           <div className="form-floating">
@@ -156,6 +159,7 @@ function Form(props) {
               }}
             />
             <label htmlFor="floatingPassword ">Password</label>
+            {validationInfor.errors?.password}
           </div>
           </>
           )
@@ -174,6 +178,5 @@ function Form(props) {
       </main>
     </div>
   );
-}
 
 export default Form;
